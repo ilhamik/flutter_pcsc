@@ -1,6 +1,6 @@
 name: flutter_pcsc_windows
 description: Windows implementation of the flutter_pcsc plugin for using PCSC smartcard readers.
-version: 0.0.3
+version: 0.0.5
 publish_to: none
 repository: https://github.com/ilhamik/flutter_pcsc
 
