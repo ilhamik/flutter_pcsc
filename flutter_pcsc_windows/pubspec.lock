@@ -103,7 +103,7 @@ packages:
       path: "../flutter_pcsc_platform_interface"
       relative: true
     source: path
-    version: "0.0.2"
+    version: "0.0.5"
   flutter_test:
     dependency: "direct dev"
     description: flutter
