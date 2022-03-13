@@ -46,6 +46,10 @@ abstract class PcscPlatform extends PlatformInterface {
     throw UnimplementedError('transmit() has not been implemented.');
   }
 
+  Future<List<int>> getCardStatus(int hCard, int activeProtocol) {
+    throw UnimplementedError('getCardStatus() has not been implemented.');
+  }
+
   Future<void> cardDisconnect(int hCard, int disposition) {
     throw UnimplementedError('cardDisconnect() has not been implemented.');
   }

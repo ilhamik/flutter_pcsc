@@ -35,6 +35,12 @@ class Pcsc {
         newIsolate: newIsolate);
   }
 
+  /// Transmits an APDU to the card.
+  static Future<List<int>> getCardStatus(CardStruct card) {
+    return _platform.getCardStatus(
+        card.hCard, protocolToInt(card.activeProtocol));
+  }
+
   /// Disconnects from the card.
   static Future<void> cardDisconnect(int hCard, PcscDisposition disposition) {
     return _platform.cardDisconnect(hCard, dispositionToInt(disposition));

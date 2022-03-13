@@ -40,6 +40,12 @@ class PcscWindows extends PcscPlatform {
         newIsolate: newIsolate);
   }
 
+  /// Transmits an APDU to the card.
+  @override
+  Future<List<int>> getCardStatus(int hCard, int activeProtocol) {
+    return _binding.getCardStatus(hCard, activeProtocol);
+  }
+
   /// Disconnects from the card.
   @override
   Future<void> cardDisconnect(int hCard, int disposition) {

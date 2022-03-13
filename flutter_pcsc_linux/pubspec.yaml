@@ -1,7 +1,8 @@
 name: flutter_pcsc_linux
 description: Linux implementation of the flutter_pcsc plugin for using PCSC smartcard readers.
 version: 0.0.3
-repository: https://github.com/fabienrousseau/flutter_pcsc 
+repository: https://github.com/ilhamik/flutter_pcsc
+publish_to: none
 
 environment:
   sdk: ">=2.14.0 <3.0.0"
@@ -11,7 +12,8 @@ dependencies:
   flutter:
     sdk: flutter
   ffi: ^1.0.0
-  flutter_pcsc_platform_interface: ^0.0.2
+  flutter_pcsc_platform_interface:
+    path: ../flutter_pcsc_platform_interface
 
 dev_dependencies:
   ffigen: ^4.0.0

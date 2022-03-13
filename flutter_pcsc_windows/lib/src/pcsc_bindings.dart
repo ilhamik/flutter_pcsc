@@ -112,6 +112,36 @@ class PCSCBinding {
     }
   }
 
+  Future<Uint8List> getCardStatus(int hCard, int activeProtocol) {
+
+    ffi.Pointer<SCARD_IO_REQUEST> pioSendPci = _getPCI(activeProtocol);
+
+    var pcbRecvLength = calloc<DWORD>();
+    var pcbReaderLength = calloc<DWORD>();
+    pcbReaderLength.value = 0;
+
+    var dwProtocol = calloc<DWORD>();
+    dwProtocol.value = pioSendPci.ref.dwProtocol;
+
+    var pdwState = calloc<DWORD>();
+    pcbRecvLength.value = PcscConstants.MAX_BUFFER_SIZE_EXTENDED;
+    var pbRecvBuffer = calloc<ffi.Uint8>(pcbRecvLength.value);
+
+    try {
+      var res = _nlwinscard.SCardStatusA(hCard, _nullptr, pcbReaderLength, pdwState, dwProtocol , pbRecvBuffer, pcbRecvLength);
+
+      _checkAndThrow(res, 'Error while transmitting to card');
+      Uint8List response = _asUint8List(pbRecvBuffer, pcbRecvLength.value);
+
+      return Future.value(response);
+    } finally {
+      calloc.free(pcbReaderLength);
+      calloc.free(dwProtocol);
+      calloc.free(pcbRecvLength);
+      calloc.free(pbRecvBuffer);
+    }
+  }
+
   Future<Map> cardGetStatusChange(int context, String readerName,
       {int currentState = PcscConstants.SCARD_STATE_UNAWARE}) async {
     ffi.Pointer<SCARD_READERSTATEA> rgReaderStates =
