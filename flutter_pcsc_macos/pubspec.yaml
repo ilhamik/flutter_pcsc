@@ -2,7 +2,7 @@ name: flutter_pcsc_macos
 description: macOS implementation of the flutter_pcsc plugin for using PCSC smartcard readers.
 version: 0.0.3
 repository: https://github.com/ilhamik/flutter_pcsc
-publish_to: none
+
 
 environment:
   sdk: ">=2.14.0 <3.0.0"
