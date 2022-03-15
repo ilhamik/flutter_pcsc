@@ -13,19 +13,19 @@ dependencies:
 
   flutter_pcsc_linux:
     git:
-      url: git://github.com/ilhamik/flutter_pcsc.git
+      url: https://github.com/ilhamik/flutter_pcsc.git
       path: 'flutter_pcsc_linux'
   flutter_pcsc_macos:
     git:
-      url: git://github.com/ilhamik/flutter_pcsc.git
+      url: https://github.com/ilhamik/flutter_pcsc.git
       path: 'flutter_pcsc_macos'
   flutter_pcsc_platform_interface:
     git:
-      url: git://github.com/ilhamik/flutter_pcsc.git
+      url: https://github.com/ilhamik/flutter_pcsc.git
       path: 'flutter_pcsc_platform_interface'
   flutter_pcsc_windows:
     git:
-      url: git://github.com/ilhamik/flutter_pcsc.git
+      url: https://github.com/ilhamik/flutter_pcsc.git
       path: 'flutter_pcsc_windows'
   ffi: ^1.0.0
 
