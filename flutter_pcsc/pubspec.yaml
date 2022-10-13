@@ -27,7 +27,7 @@ dependencies:
     git:
       url: https://github.com/ilhamik/flutter_pcsc.git
       path: 'flutter_pcsc_windows'
-  ffi: ^1.0.0
+  ffi: ^2.0.1
 
 
 dev_dependencies:
